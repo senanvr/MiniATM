@@ -1,29 +1,74 @@
 🏦 Mini ATM System (C++ & SQLite)
-A console-based bank management application that performs real-time database operations using SQLite3. This project demonstrates the integration of a relational database into a C++ environment, focusing on secure data handling and transaction logging.
 
-🚀 Key Features
-Account Registration: Creates new user accounts and stores them in atm_database.db.
+A console-based banking simulation system built with C++ and SQLite3.
+This project demonstrates database integration, transaction logging, and basic security mechanisms in a real-time environment.
 
-Secure Login: Verifies credentials with an encryption layer to protect user passwords.
+🚀 Features
 
-Balance Management: Real-time deposit and withdrawal operations with automatic balance updates.
+Account Registration – Create and store new user accounts in a persistent SQLite database.
 
-Transaction History: Tracks every movement (Deposit/Withdrawal) with a precise timestamp.
+Encrypted Login System – Passwords are stored using a simple Caesar-style encryption technique.
 
-Admin Dashboard: Special access to view all registered users and their current balances.
+Balance Management – Deposit and withdraw funds with instant balance updates.
+
+Transaction Logging – Every operation is recorded with a timestamp.
+
+Admin Panel – Special account (admin) can view all users and balances.
+
+Input Validation – Prevents invalid or negative monetary input.
+
+## 🗄 Database Structure
+
+### USERS Table
+
+| Column      | Type          |
+|------------|--------------|
+| ACCOUNT_NO | TEXT (UNIQUE) |
+| PASSWORD   | TEXT          |
+| BALANCE    | REAL          |
+
+### TRANSACTIONS Table
+
+| Column            | Type |
+|------------------|------|
+| ACCOUNT_NO       | TEXT |
+| TRANSACTION_TYPE | TEXT |
+| AMOUNT           | REAL |
+| DATE             | TEXT |
+
+---
 
 🛠 Tech Stack
-Programming Language: C++
 
-Database Engine: SQLite3
+Language: C++
 
-Development Environment: Visual Studio 2022
+Database: SQLite3
 
-📋 How to Use
-1.Register: Create a new account number and password.
+IDE: Visual Studio 2022
 
-2.Login: Use your credentials to access the banking menu.
+Architecture: Procedural programming with modular helper functions
 
-3.Transactions: Deposit or withdraw funds; the system will log every step.
 
-4.History: View your previous transactions with dates and amounts.
+## How to Run
+
+1. Download SQLite Amalgamation source files.
+2. Add `sqlite3.c` and `sqlite3.h` to your Visual Studio project.
+3. Build and run the project.
+4. The database file (`atm_database.db`) will be created automatically.
+
+🔐 Security Note
+
+This project uses a basic character-shift encryption for educational purposes.
+It is not intended for production-level security.
+
+📚 Learning Objectives
+
+-SQLite integration in C++
+
+-CRUD database operations
+
+-Input validation handling
+
+-Basic encryption logic
+
+-Role-based access (Admin vs User)
